@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: azure;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card{
+            background-color: beige;
+            border-radius: 15px;
+            width:350px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgb(0,0,0,0,2);
+            animation: fadeln 1s ease forwards;
+        }
+        .card img{
+            width:120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid black;
+            object-fit: cover;
+            animation: popln 0.8s ease forwards;
+            cursor:pointer;
+        }
+        .card h2{
+            margin: 15px 0 5px 0;
+            font-size: 22px;
+            color:black;
+        }
+        .card h4{
+            margin: 0 0 15px 0;
+            font-weight: normal;
+            color:black;
+        }
+        .card p{
+            font-size: 14px;
+            color:rgb(4,4,78);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .skills{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .skills span{
+            background-color: brown;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            transition: transform 0.3s,background-color 0.3s;
+            cursor: pointer;
+        }
+        .skills span{
+            background-color: rgb(217, 170, 170);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            transition: transform 0.3s,background-color 0.3s;
+            cursor: pointer;
+        }
+        .skills span:hover{
+            transform: scale(1.1);
+            background-color: rgb(230, 138, 122);
+        }
+        .btns{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .btns button{
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s,background-color 0.3s;
+        }
+        .btn-contact{
+            background-color: rgb(186, 150, 220);
+            color: white;
+        }
+        .btn-contact:hover{
+            background-color: rgb(134, 96, 169);
+            transform: scale(1.05);
+        }
+        .btn-cv{
+            background-color: rgb(186, 150, 220);
+            color:white;
+        }
+        .btn-cv:hover{
+            background-color: rgb(134, 96, 169);
+            transform: scale(1.05);
+        }
+
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color:seagreen;
+            margin-top:10px ;
+        }
+        @keyframes fadeIn{
+            from{opacity: 0;transform: translateY(20px); }
+            to{opacity: 1;transform: translateY(0);}
+        }
+        @keyframes popIn{
+            from{opacity: 0;transform:scale(0.5); }
+            to{opacity: 1;transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="spoosm1.jpeg" alt="Profile Photo">
+
+        <h2>Spoorthi.S.M</h2>
+        <h4>BCA Student</h4>
+
+        <p>
+            I am a BCA Student from SJR College.
+            Learning about new programing language fasinates me.
+            I aspire to build new tech which help solving day-to-day problems.
+        </p>
+
+        <div class="skills">
+            <span>Python</span>
+            <span>C</span>
+            <span>Java</span>
+            <span>C++</span>
+            <span>Web program</span>
+            <span>HTML</span>
+            <span>CSS</span>
+        </div>
+
+        <div class="footer">
+            <button class="btn-contact">Contact me</button>
+            <button class="btn-cv">Download CV</button>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".btn-contact").addEventListener("click",function(){
+        alert("Contact Details:\n\nEmail:mmuniyappa965@gmail.com\nPhone:+91 9019676337"
+       );
+        });
+        document.querySelector(".btn-cv").addEventListener("click",function(){
+            alert("CV download will start soon(demo).");
+        });
+
+        let skills=document.querySelectorAll(".skills span");
+
+        skills.forEach(function(skill){
+            skill.addEventListener("click",function(){
+            alert("Skill:"+this.innerText);
+        });
+    });
+        document.querySelector(".card img").addEventListener("click",function(){
+            alert("Hello Welcome To My portfolio!");
+        });
+    </script>
+</body>
+</html>
